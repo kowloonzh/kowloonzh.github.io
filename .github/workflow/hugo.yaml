@@ -19,7 +19,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.100.2'
-          # 是否启用 hugo extend
+          # 是否启用 hugo extend 
           extended: true
 
       - name: Build
