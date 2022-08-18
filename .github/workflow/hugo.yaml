@@ -27,7 +27,6 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.MY_TOKEN }}
           PUBLISH_BRANCH: gh-pages  # 推送到当前 gh-pages 分支
