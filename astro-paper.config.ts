@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://kowloonzh.github.io/",
     title: "井久",
-    description: "编程是一种艺术，投资也是",
+    description: "Knowledge gives you power, but character respect",
     author: "井久",
     profile: "https://github.com/kowloonzh",
     ogImage: "default-og.jpg",
