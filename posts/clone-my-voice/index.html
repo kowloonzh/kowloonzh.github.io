@@ -1,0 +1,708 @@
+<!DOCTYPE html><html dir="ltr" lang="zh-CN" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="canonical" href="https://kowloonzh.github.io/posts/clone-my-voice/"><meta name="generator" content="Astro v7.4.2"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/2213c1e7fbe06cc7.woff") format("woff"), url("/_astro/fonts/b87f789471b4c602.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c487dbd9c215141e.woff") format("woff"), url("/_astro/fonts/bb0c016d60298234.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/0976c79a1e97c08d.woff") format("woff"), url("/_astro/fonts/b3e69a4f03324880.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3c46d5a1dde2929d.woff") format("woff"), url("/_astro/fonts/0ff1dfaf1dff21d0.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e9aa617e80052f4b.woff") format("woff"), url("/_astro/fonts/d9a5ad8b8018e5de.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/5056f1a50e5e7744.woff") format("woff"), url("/_astro/fonts/3e4dac0d0220e48a.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e734307f8c328338.woff") format("woff"), url("/_astro/fonts/ba3036786bf88603.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/dfa89044152f7da4.woff") format("woff"), url("/_astro/fonts/39aec4e7fc7cc077.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/8bbd58b325585200.woff") format("woff"), url("/_astro/fonts/b33609507afd910d.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/035035a9ddbd14aa.woff") format("woff"), url("/_astro/fonts/50fcf54bf575f53f.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>克隆自己的声音：一次从调研到放弃的完整记录 | 井久</title><meta name="title" content="克隆自己的声音：一次从调研到放弃的完整记录 | 井久"><meta name="description" content="结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。"><meta name="author" content="井久"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="井久"><meta property="og:title" content="克隆自己的声音：一次从调研到放弃的完整记录 | 井久"><meta property="og:description" content="结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。"><meta property="og:url" content="https://kowloonzh.github.io/posts/clone-my-voice/"><meta property="og:image" content="https://kowloonzh.github.io/default-og.jpg"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://kowloonzh.github.io/posts/clone-my-voice/"><meta property="twitter:title" content="克隆自己的声音：一次从调研到放弃的完整记录 | 井久"><meta property="twitter:description" content="结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。"><meta property="twitter:image" content="https://kowloonzh.github.io/default-og.jpg"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="井久" href="https://kowloonzh.github.io/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-10-26T14:11:00.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"克隆自己的声音：一次从调研到放弃的完整记录 | 井久","datePublished":"2026-10-26T14:11:00.000Z","author":[{"@type":"Person","name":"井久","url":"https://github.com/kowloonzh"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BDCjmQ8c.js"></script><link rel="stylesheet" href="/_astro/Footer.CiUNKT_E.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: others; }@layer astro { ::view-transition-old(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">跳到正文</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">井久</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="menu-items" data-label-open="打开菜单" data-label-close="关闭菜单"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">文章</a></li><li class="col-span-2"><a href="/tags/">标签</a></li><li class="col-span-2"><a href="/about/">关于</a></li><li class="col-span-2"><a href="/archives/" title="归档" aria-label="归档" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">归档</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="搜索" aria-label="搜索" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">搜索</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="切换明暗主题" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}function t(){let e=document.getElementById(`skip-to-content`);e&&e.addEventListener(`click`,e=>{if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();let t=document.getElementById(`main-content`);t&&(t.setAttribute(`tabindex`,`-1`),t.addEventListener(`blur`,()=>t.removeAttribute(`tabindex`),{once:!0}),t.focus(),t.scrollIntoView({behavior:`smooth`}))})}e(),document.addEventListener(`astro:after-swap`,e),t(),document.addEventListener(`astro:after-swap`,t);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>返回</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><h1 style="view-transition-name:clone-my-voice" class="text-accent inline-block text-2xl font-bold sm:text-3xl">克隆自己的声音：一次从调研到放弃的完整记录</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-10-26T14:11:00.000Z">2026-10-26</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="mt-8 w-full app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"><iframe class="html-post-frame" srcdoc="<!doctype html>
+<html lang=&quot;zh-CN&quot;>
+<head>
+<meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+<title>克隆自己的声音：一次从调研到放弃的完整记录</title>
+<meta name=&quot;date&quot; content=&quot;2026-10-26T22:11:00+08:00&quot;>
+<meta name=&quot;description&quot; content=&quot;结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。&quot;>
+<meta property=&quot;og:type&quot; content=&quot;article&quot;>
+<meta property=&quot;og:title&quot; content=&quot;克隆自己的声音：一次从调研到放弃的完整记录&quot;>
+<meta property=&quot;og:description&quot; content=&quot;结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。&quot;>
+<meta property=&quot;og:url&quot; content=&quot;https://kowloonzh.github.io/imgse/2026/10/26/clone-my-voice.html&quot;>
+<meta name=&quot;twitter:card&quot; content=&quot;summary&quot;>
+<meta name=&quot;twitter:title&quot; content=&quot;克隆自己的声音：一次从调研到放弃的完整记录&quot;>
+<meta name=&quot;twitter:description&quot; content=&quot;结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。&quot;>
+<meta name=&quot;twitter:creator&quot; content=&quot;@kowloonzh&quot;>
+<style>
+  :root { --bg:#fbfaf7; --fg:#1f1d1a; --muted:#6b665e; --rule:#e6e1d8; --accent:#c2410c; --code:#f1ede5; --th:#f4f0e8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16150f; --fg:#ece7dc; --muted:#a39d91; --rule:#34302a; --accent:#fb923c; --code:#25221c; --th:#211e18; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font: 17px/1.8 -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 30px; line-height: 1.35; margin: 0 0 12px; letter-spacing: .01em; }
+  .byline { color: var(--muted); font-size: 14px; margin-bottom: 36px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+  .byline a { color: var(--muted); }
+  h2 { font-size: 21px; margin: 44px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.4; }
+  p { margin: 0 0 16px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  strong { font-weight: 650; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: var(--code); padding: 1px 6px; border-radius: 4px; }
+  blockquote { margin: 0 0 18px; padding: 10px 16px; border-left: 3px solid var(--rule); color: var(--muted); background: var(--code); border-radius: 0 6px 6px 0; }
+  blockquote p { margin: 0; }
+  ul, ol { padding-left: 1.4em; margin: 0 0 18px; }
+  li { margin: 4px 0; }
+  .tw { overflow-x: auto; margin: 4px 0 22px; border: 1px solid var(--rule); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.6; }
+  th, td { padding: 9px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  th { background: var(--th); font-weight: 650; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
+  @media (max-width: 480px) { body { font-size: 16px; } main { padding-top: 32px; } h1 { font-size: 25px; } table { font-size: 14px; } }
+</style>
+</head>
+<body>
+<main>
+<article>
+<h1>克隆自己的声音：一次从调研到放弃的完整记录</h1>
+<div class=&quot;byline&quot;>2026 年 10 月 26 日 · <a href=&quot;https://x.com/kowloonzh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@kowloonzh</a></div>
+<h2>缘起</h2>
+<p>结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。</p>
+<p>起因是我用 Claude Code（模型 Claude Opus 5.5）做了一支 30 秒的手绘动画科普短视频，讲躺着刷手机时怎么用一个枕头放松肩颈。视频的配音用的是 edge-tts 的 zh-CN-XiaoxiaoNeural（晓晓）。</p>
+<p>我想把配音换成自己的声音，让视频更像“我在讲”。于是从调研开始，一路做到了安装、克隆和试听。</p>
+<h2>调研</h2>
+<p>edge-tts 本身不能克隆声音，要用自己的声音必须换工具。<a href=&quot;https://github.com/rany2/edge-tts&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>edge-tts</a> 是一个非官方开源库，调用的是 Edge 浏览器“朗读”功能背后的微软在线语音，只能选预设声音、调语速和音调。</p>
+<p>可选的方案分两类：</p>
+<div class=&quot;tw&quot;><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>类型</th>
+<th>怎么克隆</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=&quot;https://github.com/FunAudioLLM/CosyVoice&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>CosyVoice</a>（阿里）</td>
+<td>开源，本地运行</td>
+<td>零样本：10–30 秒参考音频</td>
+<td>中文效果好，可保存说话人重复使用</td>
+</tr>
+<tr>
+<td><a href=&quot;https://github.com/RVC-Boss/GPT-SoVITS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>GPT-SoVITS</a></td>
+<td>开源，本地运行</td>
+<td>微调：约 1 分钟录音训练一次</td>
+<td>中文社区最流行，相似度高</td>
+</tr>
+<tr>
+<td><a href=&quot;https://github.com/SWivid/F5-TTS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>F5-TTS</a></td>
+<td>开源，本地运行</td>
+<td>零样本：几秒参考音频</td>
+<td>中英文都行</td>
+</tr>
+<tr>
+<td><a href=&quot;https://github.com/index-tts/index-tts&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>IndexTTS</a>（B 站）</td>
+<td>开源，本地运行</td>
+<td>零样本</td>
+<td>多音字处理好</td>
+</tr>
+<tr>
+<td>火山引擎/豆包、MiniMax、ElevenLabs</td>
+<td>商用在线服务</td>
+<td>录几十秒，拿到声音 ID</td>
+<td>省事，按量付费</td>
+</tr>
+</tbody>
+</table></div>
+<p>我最关心的是“克隆一次，以后直接用”。零样本方案完全不训练，只是在生成时参考一段录音；模型只在生成那一刻运行，跑完就退出，不用一直挂着。</p>
+<p>最后选了 CosyVoice2：中文效果好，支持把声音保存成说话人 ID 反复调用，录音和声纹都留在本机。</p>
+<h2>安装</h2>
+<p>在 Apple M2、16GB 内存的 Mac 上装好 CosyVoice2，前后踩了四个坑。我给它单独建了一个 Python 3.10 环境（用 uv），不影响电脑上已有的环境。</p>
+<div class=&quot;tw&quot;><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>解决办法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>找不到 macOS 版 onnxruntime 1.18.0</td>
+<td>官方依赖清单带了 Linux 显卡的 CUDA 包源，uv 只从第一个找到包的源里选版本</td>
+<td>去掉两行 <code>--extra-index-url</code>，生成 <code>requirements-mac.txt</code></td>
+</tr>
+<tr>
+<td>openai-whisper 构建失败</td>
+<td>它只有源码包，构建要用 <code>pkg_resources</code>，新版 setuptools 已经删了</td>
+<td>先在主环境装旧版 setuptools，没用：uv 在隔离环境里构建</td>
+</tr>
+<tr>
+<td>同上，第二次</td>
+<td>隔离构建环境仍是新版 setuptools</td>
+<td>用 <code>--build-constraint</code> 把构建用的 setuptools 锁在 70 以下</td>
+</tr>
+<tr>
+<td>运行时报 <code>No module named 'pkg_resources'</code></td>
+<td>运行时也要用它，而主环境的 setuptools 被升到了 84 版</td>
+<td>把主环境的 setuptools 也降到 70 以下</td>
+</tr>
+</tbody>
+</table></div>
+<p>模型从 ModelScope 下载，CosyVoice2-0.5B 一共 5.3GB。装好后 torch 是 2.3.1，苹果芯片的 MPS 加速显示可用。</p>
+<h2>测试</h2>
+<p>用官方自带的示例音频（一段女声）跑通了零样本克隆：模型加载 46 秒，生成 6.8 秒的音频用了 17.7 秒。</p>
+<p>测试的句子是视频里的一句口播：“把枕头横过来，平躺上去。让枕头上沿托住脖子，下沿垫在胸椎下面。”声音正常，没有读错。</p>
+<p>按这个速度，生成一段 30 秒的口播大约要 1.5 分钟，再加上每次加载模型的等待。后来实际生成整段口播，连加载一共用了 3 分钟左右。</p>
+<h2>录音与克隆</h2>
+<p>我用 Mac 自带的“语音备忘录”录了 24 秒，注册成说话人 <code>my_voice</code> 之后，生成时就不再需要录音，也不用训练。</p>
+<p>录的是一段预先写好的文字：</p>
+<blockquote>
+<p>最近我在试着用 AI 做视频，从写稿、配音到画面，全部交给它来完成。说实话，比我想象中要好玩，也比我想象中要麻烦一点。不过做出来的那一刻，还是挺有成就感的。</p>
+</blockquote>
+<p>录音有两个小问题：</p>
+<ul>
+<li><strong>开头 4.1 秒没说话</strong>，只有底噪和两下点击声。自动裁静音被点击声骗过了，一点没裁掉，是我试听时发现的。按音量曲线找到真正开口的位置，只保留 4.1–22.2 秒，共 18.3 秒。</li>
+<li><strong>有轻微削顶</strong>：真峰值 +1.45 dBTP，但只有 30 个采样点，占 0.005%，听感上察觉不到。</li>
+</ul>
+<p>开头的空白会影响克隆效果：用没裁的录音生成的口播，开头也空了 0.7 秒。裁掉后重新注册，生成的口播从 0.1 秒就开始说话。</p>
+<h2>试听与调优</h2>
+<p>用我的声音念完整段视频口播（29.6 秒），听下来是这样的：</p>
+<ul>
+<li><strong>音色：很像我。</strong></li>
+<li><strong>停顿：还可以。</strong></li>
+<li><strong>语气：不自然，语速偏快。</strong> 这是原速生成的，没有加速，是模型模仿我录音里的语速。</li>
+</ul>
+<p>为了改语气，用开头三句做了三个原速对比样本：</p>
+<div class=&quot;tw&quot;><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>做法</th>
+<th>时长</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 原样</td>
+<td>直接用注册好的声音</td>
+<td>10.4 秒</td>
+<td>最自然</td>
+</tr>
+<tr>
+<td>B 聊天语气</td>
+<td>加指令“用轻松自然、像跟朋友聊天一样的语气说”</td>
+<td>8.7 秒</td>
+<td>更快了</td>
+</tr>
+<tr>
+<td>C 温和语气</td>
+<td>加指令“用温和、放松、稍微慢一点的语气说”</td>
+<td>10.2 秒</td>
+<td>不如 A</td>
+</tr>
+</tbody>
+</table></div>
+<p>A 反而最自然。我判断问题不在模型，而在参考录音：那段文字太书面，我读得像念稿，模型就学会了念稿的语气。</p>
+<p>于是换成视频里最口语化的一段重新录：“你是不是也这样？窝在床上低头刷手机，一刷就是一小时……”，当成跟朋友吐槽来说。</p>
+<h2>放弃与清理</h2>
+<p>重新录了一遍再试，我的克隆声音还是不如 edge-tts 内置的晓晓，所以视频继续用晓晓配音。</p>
+<p>还有一个顺带的问题：我说话本来偏快，克隆声音原速就要 29.6 秒，放慢后会超过朋友圈 30 秒的视频上限。</p>
+<p>这次试验留下的东西全部删掉了，一共腾出约 7.3GB：</p>
+<div class=&quot;tw&quot;><table>
+<thead>
+<tr>
+<th>内容</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CosyVoice 程序、Python 环境、模型和我的声纹特征</td>
+<td>6.8GB</td>
+</tr>
+<tr>
+<td>Whisper small 语音识别模型</td>
+<td>464MB</td>
+</tr>
+<tr>
+<td>wetext 文本规范化组件</td>
+<td>48MB</td>
+</tr>
+<tr>
+<td>我的录音副本和所有克隆样本</td>
+<td>13MB</td>
+</tr>
+</tbody>
+</table></div>
+<p>录音和声纹自始至终只存在本机，没有上传到任何地方。</p>
+<h2>复盘</h2>
+<p>声音克隆在技术上已经很成熟，音色不是难点，难的是语气。</p>
+<ol>
+<li><strong>参考录音决定了语气。</strong> 模型会模仿录音里的语速和腔调。念稿式的录音就会生成念稿式的声音，最好用平时说话的口吻录。</li>
+<li><strong>录音要干净。</strong> 开头的空白、点击声都会被学进去，点开始后一秒内开口，说完马上停。</li>
+<li><strong>语气指令不一定有用。</strong> 加了“像跟朋友聊天”“慢一点”的指令，听起来反而不如直接克隆。</li>
+<li><strong>在 Mac 上装开源模型要有耐心。</strong> 官方依赖清单默认面向 Linux 显卡，要自己处理包源和版本问题。</li>
+<li><strong>一个好的预设声音往往更实用。</strong> 对一支 30 秒的科普短视频来说，听感自然比“是不是我的声音”更重要。</li>
+</ol>
+<p>如果以后再试，可以考虑两个方向：用 CosyVoice 3.0（官方说韵律比 2.0 自然），或者用 GPT-SoVITS 训练一个专属模型。</p>
+</article>
+<footer>完整记录了一次在 Mac 上用 CosyVoice2 克隆自己声音的尝试。欢迎在 X 上找我交流：<a href=&quot;https://x.com/kowloonzh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@kowloonzh</a></footer>
+</main>
+</body>
+</html>" style="width:100%;border:0;display:block;min-height:60vh" loading="eager" onload="var d=this.contentDocument;if(!d)return;var f=this;var r=function(){f.style.height=d.documentElement.scrollHeight+'px'};r();new ResizeObserver(r).observe(d.documentElement)"></iframe><div class="sr-only" aria-hidden="true">克隆自己的声音：一次从调研到放弃的完整记录 2026 年 10 月 26 日 · @kowloonzh 缘起 结论先说：我花了一个晚上用 CosyVoice2 克隆了自己的声音，音色很像，但听感不如 edge-tts 内置的“晓晓”，最后放弃了。 起因是我用 Claude Code（模型 Claude Opus 5.5）做了一支 30 秒的手绘动画科普短视频，讲躺着刷手机时怎么用一个枕头放松肩颈。视频的配音用的是 edge-tts 的 zh-CN-XiaoxiaoNeural（晓晓）。 我想把配音换成自己的声音，让视频更像“我在讲”。于是从调研开始，一路做到了安装、克隆和试听。 调研 edge-tts 本身不能克隆声音，要用自己的声音必须换工具。 edge-tts 是一个非官方开源库，调用的是 Edge 浏览器“朗读”功能背后的微软在线语音，只能选预设声音、调语速和音调。 可选的方案分两类： 方案 类型 怎么克隆 特点 CosyVoice （阿里） 开源，本地运行 零样本：10–30 秒参考音频 中文效果好，可保存说话人重复使用 GPT-SoVITS 开源，本地运行 微调：约 1 分钟录音训练一次 中文社区最流行，相似度高 F5-TTS 开源，本地运行 零样本：几秒参考音频 中英文都行 IndexTTS （B 站） 开源，本地运行 零样本 多音字处理好 火山引擎/豆包、MiniMax、ElevenLabs 商用在线服务 录几十秒，拿到声音 ID 省事，按量付费 我最关心的是“克隆一次，以后直接用”。零样本方案完全不训练，只是在生成时参考一段录音；模型只在生成那一刻运行，跑完就退出，不用一直挂着。 最后选了 CosyVoice2：中文效果好，支持把声音保存成说话人 ID 反复调用，录音和声纹都留在本机。 安装 在 Apple M2、16GB 内存的 Mac 上装好 CosyVoice2，前后踩了四个坑。我给它单独建了一个 Python 3.10 环境（用 uv），不影响电脑上已有的环境。 问题 原因 解决办法 找不到 macOS 版 onnxruntime 1.18.0 官方依赖清单带了 Linux 显卡的 CUDA 包源，uv 只从第一个找到包的源里选版本 去掉两行 --extra-index-url ，生成 requirements-mac.txt openai-whisper 构建失败 它只有源码包，构建要用 pkg_resources ，新版 setuptools 已经删了 先在主环境装旧版 setuptools，没用：uv 在隔离环境里构建 同上，第二次 隔离构建环境仍是新版 setuptools 用 --build-constraint 把构建用的 setuptools 锁在 70 以下 运行时报 No module named 'pkg_resources' 运行时也要用它，而主环境的 setuptools 被升到了 84 版 把主环境的 setuptools 也降到 70 以下 模型从 ModelScope 下载，CosyVoice2-0.5B 一共 5.3GB。装好后 torch 是 2.3.1，苹果芯片的 MPS 加速显示可用。 测试 用官方自带的示例音频（一段女声）跑通了零样本克隆：模型加载 46 秒，生成 6.8 秒的音频用了 17.7 秒。 测试的句子是视频里的一句口播：“把枕头横过来，平躺上去。让枕头上沿托住脖子，下沿垫在胸椎下面。”声音正常，没有读错。 按这个速度，生成一段 30 秒的口播大约要 1.5 分钟，再加上每次加载模型的等待。后来实际生成整段口播，连加载一共用了 3 分钟左右。 录音与克隆 我用 Mac 自带的“语音备忘录”录了 24 秒，注册成说话人 my_voice 之后，生成时就不再需要录音，也不用训练。 录的是一段预先写好的文字： 最近我在试着用 AI 做视频，从写稿、配音到画面，全部交给它来完成。说实话，比我想象中要好玩，也比我想象中要麻烦一点。不过做出来的那一刻，还是挺有成就感的。 录音有两个小问题： 开头 4.1 秒没说话 ，只有底噪和两下点击声。自动裁静音被点击声骗过了，一点没裁掉，是我试听时发现的。按音量曲线找到真正开口的位置，只保留 4.1–22.2 秒，共 18.3 秒。 有轻微削顶 ：真峰值 +1.45 dBTP，但只有 30 个采样点，占 0.005%，听感上察觉不到。 开头的空白会影响克隆效果：用没裁的录音生成的口播，开头也空了 0.7 秒。裁掉后重新注册，生成的口播从 0.1 秒就开始说话。 试听与调优 用我的声音念完整段视频口播（29.6 秒），听下来是这样的： 音色：很像我。 停顿：还可以。 语气：不自然，语速偏快。 这是原速生成的，没有加速，是模型模仿我录音里的语速。 为了改语气，用开头三句做了三个原速对比样本： 版本 做法 时长 结果 A 原样 直接用注册好的声音 10.4 秒 最自然 B 聊天语气 加指令“用轻松自然、像跟朋友聊天一样的语气说” 8.7 秒 更快了 C 温和语气 加指令“用温和、放松、稍微慢一点的语气说” 10.2 秒 不如 A A 反而最自然。我判断问题不在模型，而在参考录音：那段文字太书面，我读得像念稿，模型就学会了念稿的语气。 于是换成视频里最口语化的一段重新录：“你是不是也这样？窝在床上低头刷手机，一刷就是一小时……”，当成跟朋友吐槽来说。 放弃与清理 重新录了一遍再试，我的克隆声音还是不如 edge-tts 内置的晓晓，所以视频继续用晓晓配音。 还有一个顺带的问题：我说话本来偏快，克隆声音原速就要 29.6 秒，放慢后会超过朋友圈 30 秒的视频上限。 这次试验留下的东西全部删掉了，一共腾出约 7.3GB： 内容 大小 CosyVoice 程序、Python 环境、模型和我的声纹特征 6.8GB Whisper small 语音识别模型 464MB wetext 文本规范化组件 48MB 我的录音副本和所有克隆样本 13MB 录音和声纹自始至终只存在本机，没有上传到任何地方。 复盘 声音克隆在技术上已经很成熟，音色不是难点，难的是语气。 参考录音决定了语气。 模型会模仿录音里的语速和腔调。念稿式的录音就会生成念稿式的声音，最好用平时说话的口吻录。 录音要干净。 开头的空白、点击声都会被学进去，点开始后一秒内开口，说完马上停。 语气指令不一定有用。 加了“像跟朋友聊天”“慢一点”的指令，听起来反而不如直接克隆。 在 Mac 上装开源模型要有耐心。 官方依赖清单默认面向 Linux 显卡，要自己处理包源和版本问题。 一个好的预设声音往往更实用。 对一支 30 秒的科普短视频来说，听感自然比“是不是我的声音”更重要。 如果以后再试，可以考虑两个方向：用 CosyVoice 3.0（官方说韵律比 2.0 自然），或者用 GPT-SoVITS 训练一个专属模型。 完整记录了一次在 Mac 上用 CosyVoice2 克隆自己声音的尝试。欢迎在 X 上找我交流： @kowloonzh</div></article><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>回到顶部</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/others/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>others</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">分享：</span><div class="text-center"><a href="https://x.com/intent/post?url=https://kowloonzh.github.io/posts/clone-my-voice/" title="分享到 X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">分享到 X</span></a><a href="https://t.me/share/url?url=https://kowloonzh.github.io/posts/clone-my-voice/" title="分享到 Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">分享到 Telegram</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://kowloonzh.github.io/posts/clone-my-voice/" title="通过邮件分享" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">通过邮件分享</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/avoid-duplicate-alerts/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>上一篇</span><div class="text-accent/85 text-sm">如何避免频繁报警同样的内容</div></div></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/kowloonzh" title="井久 on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">井久 on Github</span></a><a href="mailto:kowloonzh@gmail.com" title="Send an email to 井久" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to 井久</span></a></div><div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"><span>Copyright &#169; 2026</span><span class="hidden sm:inline">&nbsp;|&nbsp;</span><span>保留所有权利。</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
