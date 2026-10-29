@@ -1,0 +1,750 @@
+<!DOCTYPE html><html dir="ltr" lang="zh-CN" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="canonical" href="https://kowloonzh.github.io/posts/programmer-video/"><meta name="generator" content="Astro v7.4.2"><!-- Font --><style>@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/2213c1e7fbe06cc7.woff") format("woff"), url("/_astro/fonts/b87f789471b4c602.ttf") format("truetype");font-display:swap;font-weight:300;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/c487dbd9c215141e.woff") format("woff"), url("/_astro/fonts/bb0c016d60298234.ttf") format("truetype");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/0976c79a1e97c08d.woff") format("woff"), url("/_astro/fonts/b3e69a4f03324880.ttf") format("truetype");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/3c46d5a1dde2929d.woff") format("woff"), url("/_astro/fonts/0ff1dfaf1dff21d0.ttf") format("truetype");font-display:swap;font-weight:600;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e9aa617e80052f4b.woff") format("woff"), url("/_astro/fonts/d9a5ad8b8018e5de.ttf") format("truetype");font-display:swap;font-weight:700;font-style:italic;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/5056f1a50e5e7744.woff") format("woff"), url("/_astro/fonts/3e4dac0d0220e48a.ttf") format("truetype");font-display:swap;font-weight:300;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/e734307f8c328338.woff") format("woff"), url("/_astro/fonts/ba3036786bf88603.ttf") format("truetype");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/dfa89044152f7da4.woff") format("woff"), url("/_astro/fonts/39aec4e7fc7cc077.ttf") format("truetype");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/8bbd58b325585200.woff") format("woff"), url("/_astro/fonts/b33609507afd910d.ttf") format("truetype");font-display:swap;font-weight:600;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404";src:url("/_astro/fonts/035035a9ddbd14aa.woff") format("woff"), url("/_astro/fonts/50fcf54bf575f53f.ttf") format("truetype");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:italic;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:300;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:500;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:600;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}@font-face{font-family:"Google Sans Code-1a30c214885cb404 fallback: Courier New";src:local("Courier New");font-display:swap;font-weight:700;font-style:normal;size-adjust:99.9837%;ascent-override:96.6157%;descent-override:28.6047%;}:root{--font-google-sans-code:"Google Sans Code-1a30c214885cb404","Google Sans Code-1a30c214885cb404 fallback: Courier New",monospace;}</style><!-- Primary meta --><title>我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录 | 井久</title><meta name="title" content="我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录 | 井久"><meta name="description" content="我手里有一条很喜欢的 B 站科普视频（BV1NNge6PEHP）。它的风格很鲜明："><meta name="author" content="井久"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="井久"><meta property="og:title" content="我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录 | 井久"><meta property="og:description" content="我手里有一条很喜欢的 B 站科普视频（BV1NNge6PEHP）。它的风格很鲜明："><meta property="og:url" content="https://kowloonzh.github.io/posts/programmer-video/"><meta property="og:image" content="https://kowloonzh.github.io/default-og.jpg"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://kowloonzh.github.io/posts/programmer-video/"><meta property="twitter:title" content="我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录 | 井久"><meta property="twitter:description" content="我手里有一条很喜欢的 B 站科普视频（BV1NNge6PEHP）。它的风格很鲜明："><meta property="twitter:image" content="https://kowloonzh.github.io/default-og.jpg"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="井久" href="https://kowloonzh.github.io/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-10-29T15:58:43.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录 | 井久","datePublished":"2026-10-29T15:58:43.000Z","author":[{"@type":"Person","name":"井久","url":"https://github.com/kowloonzh"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BDCjmQ8c.js"></script><link rel="stylesheet" href="/_astro/Footer.CUdftLBP.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: others; }@layer astro { ::view-transition-old(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(others) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">跳到正文</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none">井久</a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="menu-items" data-label-open="打开菜单" data-label-close="关闭菜单"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav">文章</a></li><li class="col-span-2"><a href="/tags/">标签</a></li><li class="col-span-2"><a href="/about/">关于</a></li><li class="col-span-2"><a href="/archives/" title="归档" aria-label="归档" class="group inline-flex items-center gap-1 hover:text-accent focus-outline flex size-full justify-center p-3 sm:relative sm:size-8 sm:p-0"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden sm:absolute sm:top-1/2 sm:left-1/2 sm:block sm:size-6 sm:-translate-x-1/2 sm:-translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4" /></svg><span class="sm:sr-only">归档</span></a></li><li class="col-span-1 flex items-center justify-center"><a href="/search/" title="搜索" aria-label="搜索" class="group inline-flex items-center gap-1 hover:text-accent focus-outline relative size-8"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6" /></svg><span class="sr-only">搜索</span></a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="切换明暗主题" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}function t(){let e=document.getElementById(`skip-to-content`);e&&e.addEventListener(`click`,e=>{if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();let t=document.getElementById(`main-content`);t&&(t.setAttribute(`tabindex`,`-1`),t.addEventListener(`blur`,()=>t.removeAttribute(`tabindex`),{once:!0}),t.focus(),t.scrollIntoView({behavior:`smooth`}))})}e(),document.addEventListener(`astro:after-swap`,e),t(),document.addEventListener(`astro:after-swap`,t);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>返回</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout" data-pagefind-body><h1 style="view-transition-name:programmer-video" class="text-accent inline-block text-2xl font-bold sm:text-3xl">我是怎么用 AI 做出一条 10 分钟科普视频的：《程序员简史》制作全记录</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-10-29T15:58:43.000Z">2026-10-29</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><article id="article" class="mt-8 w-full app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"><blockquote><p>一条 10 分 37 秒的中文科普视频。从“打孔卡织布机”讲到 2026 年的 AI 智能体，140 个镜头、90 多张插画、全程配音、字幕、音效和背景音乐。
+除了最后的审美判断，几乎每一步都是在终端里跟 AI 对话完成的：<strong>Claude Code 当导演兼剪辑，Codex 负责画画和挑刺。</strong></p></blockquote>
+<hr>
+<h2 id="一起点先找一条想抄的参考片">一、起点：先找一条“想抄”的参考片</h2>
+<p>我手里有一条很喜欢的 B 站科普视频（<code>BV1NNge6PEHP</code>）。它的风格很鲜明：</p>
+<ul>
+<li><strong>第二人称叙事</strong>：“假如你是一名……”，把观众直接放进历史现场；</li>
+<li><strong>复古美漫画风</strong>：粗黑描边、本戴点网点、做旧纸张质感；</li>
+<li><strong>固定的“舞台”</strong>：米白天空 + 透视地砖，人物站上去讲故事；</li>
+<li><strong>大字标题</strong>：英文大字在人物身后、中文标题在前；</li>
+<li><strong>贴纸和音效</strong>：问号、感叹号、汗滴，每一次新概念出现都有“嗖”“咚”。</li>
+</ul>
+<p>我给 Claude Code 的需求只有一句：<strong>做一条讲“程序员这个职业从哪儿来”的视频，用关键人物和事件串起来，旁白风格和画风照着参考片来。</strong></p>
+<p>Claude 先把参考片拆了一遍：截取干净的街景、肖像、舞台帧作为风格参考图（<code>refs/style/</code>），总结出叙事套路和镜头语法，然后和我确认了几个默认项：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>决定</th><th>选择</th></tr></thead><tbody><tr><td>时长</td><td>约 10 分钟，分批交付</td></tr><tr><td>配音</td><td>edge-tts，<code>zh-CN-YunxiNeural</code></td></tr><tr><td>主角“你”</td><td>一位戴眼镜、穿卫衣的亚洲程序员，每个时代换装但同一张脸</td></tr><tr><td>真实人物</td><td>从网上找真实照片当参考，再重绘成参考片的画风</td></tr><tr><td>流程</td><td>先做样张，定稿后再批量</td></tr></tbody></table>
+<hr>
+<h2 id="二整体流水线">二、整体流水线</h2>
+<p>整个项目就是一个文件夹 + 一组 Python 脚本，所有东西都可以重跑：</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="plaintext"><code><span class="line"><span>script/shots_all.json        分镜表（唯一的“剧本源”）</span></span>
+<span class="line"><span>        │</span></span>
+<span class="line"><span>        ├─ tts.py            → audio/&#x3C;镜头>.mp3 + .vtt        配音（每镜头一段）</span></span>
+<span class="line"><span>        ├─ assets_*.json     → draw_batch.py → art/*.png       出图（Codex 生图）</span></span>
+<span class="line"><span>        │                    → cutout.py     → art/cut/*.png   抠图（rembg）</span></span>
+<span class="line"><span>        ├─ compose.py        → build/frames/&#x3C;镜头>_base/over.png   合成静帧</span></span>
+<span class="line"><span>        ├─ subs.py           → 字幕 ASS/SRT + 水印</span></span>
+<span class="line"><span>        ├─ sfx.py            → 音效轨（立体声）</span></span>
+<span class="line"><span>        ├─ music_bed.py      → 背景音乐轨（按镜头起伏）</span></span>
+<span class="line"><span>        └─ build_video.py    → 推镜、叠加、拼接、混音、烧字幕、响度 → build/full_vN.mp4</span></span></code></pre>
+<p>视频处理全部通过一个 ffmpeg 技能包里的脚本完成（<code>insert</code> 推镜、<code>overlay</code> 叠加、<code>join</code> 拼接、<code>audio</code> 混音、<code>caption</code> 字幕、<code>loudness</code> 响度、<code>check</code> 平台规格检查、<code>look</code> 抽帧看图），<strong>不手写一行 ffmpeg 命令</strong>。这样每一步都有校验，出了问题也能说清楚是哪一步。</p>
+<h3 id="分镜表一切的源头">分镜表：一切的源头</h3>
+<p>每个镜头就是一条 JSON：</p>
+<pre class="astro-code astro-code-themes min-light night-owl" style="--shiki-light:#24292eff;--shiki-dark:#d6deeb;--shiki-light-bg:#ffffff;--shiki-dark-bg:#011627; overflow-x: auto;--file-name-offset: -0.75rem;" tabindex="0" data-language="json"><code><span class="line"><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">{</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA">"id"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">s010</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "ch"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#1976D2;--shiki-dark:#F78C6C"> 0</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "text"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">1804年，你是法国里昂的一名织布工人。</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "visual"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">棕褐色里昂街景，主角穿19世纪初工人装</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "bg"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">lyon_street</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "chars"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">hero_1804</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">]</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span></span>
+<span class="line"><span style="--shiki-light:#D32F2F;--shiki-dark:#7FDBCA"> "title"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">:</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB"> [</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">LYON</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#212121;--shiki-dark:#D6DEEB">,</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD"> "</span><span style="--shiki-light:#22863A;--shiki-dark:#C789D6">1804 · 里昂</span><span style="--shiki-light:#22863A;--shiki-dark:#D9F5DD">"</span><span style="--shiki-light:#24292EFF;--shiki-dark:#D6DEEB">]}</span></span></code></pre>
+<p>旁白、画面描述、背景、出场人物、标题、贴纸都在这里。改文案 = 改这一行，然后重跑。最终版一共 <strong>140 个镜头，13 个章节</strong>（冷开场 + 序章 + 12 章）。</p>
+<hr>
+<h2 id="三画面让-codex-当插画师">三、画面：让 Codex 当插画师</h2>
+<h3 id="1-样张先行">1. 样张先行</h3>
+<p>正式出图之前先画了三张样张：主角、阿达·洛夫莱斯的肖像、舞台背景。舞台第一版是棋盘格地面，我不满意，第二版换成参考片那种浅薄荷绿地砖，定稿。<strong>这三张样张后来成了所有出图的“风格锚点”</strong>，每张图都把它们当参考图一起喂进去。</p>
+<h3 id="2-用-codex-画图">2. 用 Codex 画图</h3>
+<p>Claude 本身不能生成图片，所以我写了一个小工具 <code>codex-draw</code>：用 Codex CLI 调用内置的生图功能，传入提示词和参考图，输出 PNG。</p>
+<p>出图清单 <code>assets_*.json</code> 里每张图一条，分成五类，每类自动拼接不同的构图要求：</p>
+<ul>
+<li><code>char</code> 全身人物立绘，纯米白底（方便抠图）</li>
+<li><code>prop</code> 道具</li>
+<li><code>portrait</code> 半身肖像，构图对齐阿达样张</li>
+<li><code>scene</code> 完整场景</li>
+<li><code>sepia</code> 棕褐色做旧的历史场景，中间留空给主角站</li>
+</ul>
+<p>再加一段全局风格描述（复古美漫、粗墨线、网点、<strong>画面中不要任何文字</strong>）。真实人物都附上从 Wikimedia 下载的历史照片作参考，比如：</p>
+<blockquote><p>1969 年的肯·汤普森（约 26 岁），外貌参考 thompson_ritchie.jpg 中坐着的那位……画法与 sample_hero.png 一致。</p></blockquote>
+<h3 id="3-额度用完了怎么办">3. 额度用完了怎么办</h3>
+<p>Codex 的生图有额度限制，一个窗口大概只能画十几到几十张。于是又加了两个脚本：</p>
+<ul>
+<li><code>draw_batch.py</code>：多线程批量出图，已存在的跳过；一旦日志里出现 “usage limit”，立刻停止发新请求；</li>
+<li><code>draw_until_done.py</code>：从报错里解析 “try again at 4:10 AM”，<strong>自动等到额度恢复再接着画</strong>，画完自动抠图。</li>
+</ul>
+<p>所以晚上挂上任务去睡觉，第二天早上图就齐了。最终一共画了 <strong>90 多张</strong>。</p>
+<h3 id="4-抠图与合成">4. 抠图与合成</h3>
+<ul>
+<li><code>rembg</code> 把人物、道具抠成透明 PNG，贴纸表按网格拆成 12 个单独贴纸；</li>
+<li><code>compose.py</code> 用 PIL 把每个镜头合成两层：
+<ul>
+<li><strong>base 层</strong>：背景 + 人物 + 道具（之后做缓慢推镜）</li>
+<li><strong>over 层</strong>：大字标题 + 贴纸 + 卡片（延迟 0.25 秒淡入，模拟“弹出”）</li>
+</ul>
+</li>
+</ul>
+<p>几个踩过的坑和解法：</p>
+<ul>
+<li><strong>标题挡脸</strong>：英文大字画在人物<em>身后</em>（先画标题，再盖上抠好的人物）；中文标题用人物的 alpha 蒙版找一段没人的空位，放不下就缩小字号再找。</li>
+<li><strong>AI 画的“伪文字”</strong>：生图模型写字总是鬼画符。凡是需要可读文字的地方——聊天窗口、HTML 代码、终端日志、名言卡、名单卡——全部改成 <strong>PIL 排版的卡片</strong>，真实字体、真实内容。</li>
+<li><strong>真实史料用真件</strong>：阿达的《注释 G》、哈佛 Mark II 那页贴着飞蛾的工作日志，都直接用公有领域的原件照片合成，并在角落注明出处，不让 AI 去“画”一份假的历史档案。</li>
+<li><strong>原理讲不清就画图解</strong>：雅卡尔织机“有孔提线、没孔不动”的机制，用代码画了一张左右对照的原理图。</li>
+</ul>
+<hr>
+<h2 id="四声音配音字幕音效音乐">四、声音：配音、字幕、音效、音乐</h2>
+<h3 id="配音">配音</h3>
+<p><code>edge-tts</code> 每个镜头生成一段 mp3，<strong>镜头时长 = 配音时长</strong>（需要停顿的镜头加一个 <code>hold</code> 字段多停几秒）。语速前后调了好几次：+8% 偏慢 → +15% 偏快 → 最终 +12%。</p>
+<p>多音字是个小麻烦：“十万行代码”被读成 xíng。解决办法是在分镜里加一个 <code>tts</code> 字段，用同音字替换（“十万<strong>航</strong>代码”），字幕仍显示原文。</p>
+<h3 id="字幕">字幕</h3>
+<p>自动字幕工具会在逗号处把句子切得很怪（下一条以“，”开头）。于是自己写了 <code>subs.py</code>：</p>
+<ul>
+<li>按标点切短句，用动态规划把碎句合并成每条 11～16 字；</li>
+<li>句尾标点去掉，句中逗号显示成空格；</li>
+<li>时间按字数分配在 edge-tts 给出的实际发声区间里；</li>
+<li>同时输出烧录用的 ASS 和可开关的 SRT 软字幕；</li>
+<li>右上角的半透明水印 “@井久” 也作为 ASS 的一层，随字幕一起烧进去，不多一次转码。</li>
+</ul>
+<h3 id="音效">音效</h3>
+<p>看完第二版我觉得“整体可以，细节不够”——参考片里每出现一个新概念都有声音。Claude 分析了参考片的立体声侧声道，发现音效集中在四种时刻：<strong>人物登场、换背景、贴纸出现、关键词标题出现</strong>。<code>sfx.py</code> 就按这些规则自动铺音效：</p>
+<ul>
+<li>换章节 → 大“嗖”；换背景 → 轻“嗖”；标题 → “嗖 + 咚”；人物登场 → “啵”；贴纸按类型配音；</li>
+<li>个别镜头加场景音：织机木头声、打字声、登月警报、翻书声……</li>
+<li>素材来自 Kenney 音效包（CC0），少量用 numpy 直接合成；</li>
+<li>按画面里元素的左右位置做立体声声像；</li>
+<li>间隔太近的音效只保留优先级最高的那个，避免“叮叮咚咚”糊成一片。</li>
+</ul>
+<h3 id="背景音乐">背景音乐</h3>
+<p>Kevin MacLeod 的 <em>Wallpaper</em>（CC BY 4.0）。<code>music_bed.py</code> 按分镜给音乐做起伏：冷开场不放音乐、正片开始淡入、登月警报和 ENIAC 名单那几秒压低音乐。最后统一做压缩、限幅和响度标准化到 <strong>-14 LUFS</strong>，过 YouTube 的 12 项规格检查。</p>
+<hr>
+<h2 id="五最有意思的一环让另一个-ai-来审片">五、最有意思的一环：让另一个 AI 来审片</h2>
+<p>做到第四版，我自己已经看不出明显问题了。于是借用了另一个项目里的“交叉验证”思路：<strong>让 Codex（GPT 系列模型）当一个严苛的评审团</strong>，给 Claude 做的片子挑刺。</p>
+<p>给 Codex 的材料包括：分镜表、带时间码的字幕、每个镜头的抽帧拼图、参考片的截图、音效事件列表、技术检查结果。评审提示词要求它：</p>
+<ol>
+<li>逐句核对史实，给出处；</li>
+<li>按 8 个维度打分（史实、故事、配音字幕、风格还原、插画、视觉节奏、声音、技术），8 分 = B 站头部知识区水平；</li>
+<li>按“观众印象”排序给出修改清单。</li>
+</ol>
+<p>它非常不客气。第一轮挑出的问题包括：</p>
+<ul>
+<li>雅卡尔织机“有孔/没孔”的方向说反了；</li>
+<li>C 语言和 Unix 的年份混在一起；</li>
+<li>阿达“第一个程序员”说得太绝对；</li>
+<li>画面里大量 AI 生成的假文字；</li>
+<li>字压在人脸上；</li>
+<li>片尾金句“没有证据支撑”。</li>
+</ul>
+<p>Claude 按清单逐条修改，出了 v5、v6。第二轮复审的分数变化：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>维度</th><th align="right">v4</th><th align="right">v6</th></tr></thead><tbody><tr><td>史实</td><td align="right">4</td><td align="right">5</td></tr><tr><td>故事</td><td align="right">5</td><td align="right">6</td></tr><tr><td>配音与字幕</td><td align="right">6</td><td align="right">6</td></tr><tr><td>风格还原</td><td align="right">6</td><td align="right">6</td></tr><tr><td>插画</td><td align="right">6</td><td align="right">6</td></tr><tr><td>视觉节奏</td><td align="right">5</td><td align="right">5</td></tr><tr><td>声音</td><td align="right">5</td><td align="right">5</td></tr><tr><td>技术</td><td align="right">8</td><td align="right">8</td></tr></tbody></table>
+<p>第二轮又揪出两个硬伤：汤普森的妻子带孩子是去看望<em>汤普森的</em>父母（不是“回娘家”），时间约一个月；第一个网站是 1990 年底上线、1991 年才对外公开。它还指出：</p>
+<ul>
+<li>阿达站在 20 世纪的磁带机房里，时代错位；</li>
+<li>飞蛾日志是 AI 伪造的手写；</li>
+<li>“码农”镜头是五个同脸主角戴草帽，“一眼 AI 批量图”；</li>
+<li>汤普森和里奇画成了同一款大胡子，认不出谁是谁。</li>
+</ul>
+<p>这些在 v7 里都改了：</p>
+<ul>
+<li>换上日志原件；</li>
+<li>照真实照片重画里奇（不戴眼镜、短胡子），和汤普森一眼区分；</li>
+<li>“码农”改成主角一个人扛着键盘当锄头；</li>
+<li>2008 年那一章从“罗列三个网站名”改成一个小游戏的完整故事：上架应用商店 → 陌生人在 GitHub 提交修复 → 在 Stack Overflow 查到闪退原因 → 游戏又跑起来了。</li>
+</ul>
+<p><strong>体会</strong>：两个不同厂商的模型互相制衡，效果比我自己反复看好得多。但也不是全盘照收。比如 Codex 两次建议把结尾改成一个“需求没说清 → 返工”的演示，我觉得不符合我想表达的东西，就坚持了自己的版本；有几处它认为“说得太满”的修辞，我也选择保留。<strong>AI 负责找问题，取舍还是人来做。</strong></p>
+<hr>
+<h2 id="六结尾code-is-cheap-show-me-the-talk">六、结尾：Code is cheap, show me the talk</h2>
+<p>最初 Claude 写的结尾是一个“AI 写的网页漏洞百出”的小剧场。我否了：这不符合 2026 年的现实。现在的结尾是：</p>
+<blockquote><p>二十多年前，林纳斯说过一句名言：<strong>Talk is cheap. Show me the code.</strong>
+2026 年，Claude Code、Codex 这样的 AI 智能体，你说一句需求，它自己读项目、改文件、跑测试、修 bug。
+这句话被倒了过来：<strong>Code is cheap. Show me the talk.</strong>
+代码越来越便宜。值钱的，是你能不能把想要的东西，想明白、说清楚。</p></blockquote>
+<p>这其实也是这条视频本身的制作方式：<strong>我几乎没有写代码，我做的事情就是“说清楚”</strong>：</p>
+<ul>
+<li>要什么风格；</li>
+<li>哪里节奏慢了；</li>
+<li>“行”该读 háng；</li>
+<li>名字不用念出来、展示出来就行；</li>
+<li>结尾该落在哪里。</li>
+</ul>
+<hr>
+<h2 id="七一些数字">七、一些数字</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项目</th><th>数据</th></tr></thead><tbody><tr><td>成片</td><td>10 分 37 秒，1920×1080，30 fps</td></tr><tr><td>镜头 / 章节</td><td>140 个镜头，冷开场 + 13 章</td></tr><tr><td>插画</td><td>90 多张（Codex 生图）+ 若干程序排版的卡片和原理图</td></tr><tr><td>音效</td><td>约 220 个，自动铺设</td></tr><tr><td>版本迭代</td><td>v1 → v7</td></tr><tr><td>外部审片</td><td>Codex 两轮，共列出几十处史实、画面和声音问题</td></tr><tr><td>响度</td><td>-14 LUFS，YouTube 12 项规格全部通过</td></tr></tbody></table>
+<h2 id="八如果你也想这么做">八、如果你也想这么做</h2>
+<ol>
+<li><strong>先找一条参考片</strong>，让 AI 把它的叙事套路、画面语法、声音规律拆清楚，比空想风格靠谱得多。</li>
+<li><strong>样张先定稿</strong>，再批量。样张就是之后所有出图的锚点。</li>
+<li><strong>一切从一张分镜表生成</strong>，改一处、全片重跑，不要手工拼。</li>
+<li><strong>需要“真”的东西就别让 AI 画</strong>：文字用排版，史料用原件，原理用图解。</li>
+<li><strong>让另一个模型来审</strong>，把它当一个挑剔的编辑；但最后拍板的是你。</li>
+</ol>
+<hr>
+<p><em>素材与授权：历史照片和手稿来自 Wikimedia Commons 及美国海军历史与遗产司令部（公有领域）；音效来自 Kenney（CC0）；背景音乐 “Wallpaper” by Kevin MacLeod (incompetech.com)，CC BY 4.0。</em></p></article><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>回到顶部</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/others/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>others</a></li></ul><div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start"><span class="italic">分享：</span><div class="text-center"><a href="https://x.com/intent/post?url=https://kowloonzh.github.io/posts/programmer-video/" title="分享到 X" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m4 4 11.733 16H20L8.267 4zM4 20l6.768-6.768m2.46-2.46L20 4" /></svg><span class="sr-only">分享到 X</span></a><a href="https://t.me/share/url?url=https://kowloonzh.github.io/posts/programmer-video/" title="分享到 Telegram" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 10-4 4 6 6 4-16-18 7 4 2 2 6 3-4" /></svg><span class="sr-only">分享到 Telegram</span></a><a href="mailto:?subject=See%20this%20post&amp;body=https://kowloonzh.github.io/posts/programmer-video/" title="通过邮件分享" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1 hover:text-accent scale-90 p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">通过邮件分享</span></a></div></div><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/claude-guide/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>上一篇</span><div class="text-accent/85 text-sm">人人都能使用Claude指南</div></div></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/kowloonzh" title="井久 on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">井久 on Github</span></a><a href="mailto:kowloonzh@gmail.com" title="Send an email to 井久" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="m3 7 9 6 9-6" /></svg><span class="sr-only">Send an email to 井久</span></a></div><div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"><span>Copyright &#169; 2026</span><span class="hidden sm:inline">&nbsp;|&nbsp;</span><span>保留所有权利。</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
