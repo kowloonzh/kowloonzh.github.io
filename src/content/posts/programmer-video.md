@@ -2,7 +2,7 @@
 title: "用 Claude Code + Codex 做一条 10 分钟科普视频：流程、工具和我的提示词"
 description: "成品是一条 10 分 37 秒的《程序员简史》：140 个镜头、复古美漫画风，配有配音、字幕、音效和背景音乐。 分工如下："
 pubDatetime: 2026-10-29T23:58:43+08:00
-modDatetime: 2026-10-30T00:04:31+08:00
+modDatetime: 2026-10-30T06:39:03+08:00
 ---
 
 成品是一条 10 分 37 秒的《程序员简史》：140 个镜头、复古美漫画风，配有配音、字幕、音效和背景音乐。
@@ -11,6 +11,14 @@ modDatetime: 2026-10-30T00:04:31+08:00
 - **Claude Code**：写稿、写脚本、剪辑；
 - **Codex**：画图、审片；
 - **我**：给需求、做取舍。
+
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+  <iframe src="https://player.bilibili.com/player.html?bvid=BV1Xixc6oELD&page=1&autoplay=0&high_quality=1"
+    style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"
+    scrolling="no" allowfullscreen="true" loading="lazy" title="程序员简史"></iframe>
+</div>
+
+▶ 在 B站观看：[程序员简史](https://www.bilibili.com/video/BV1Xixc6oELD)
 
 整个过程我没有手写代码。下面是核心流程、用到的工具，以及每一步我实际发出的提示词。
 
