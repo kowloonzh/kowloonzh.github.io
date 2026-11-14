@@ -1,5 +1,6 @@
 ---
 title: 人人都能使用Claude指南
+featured: true
 tags:
   - AI
   - Claude
